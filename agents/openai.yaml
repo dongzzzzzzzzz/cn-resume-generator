@@ -1,0 +1,4 @@
+interface:
+  display_name: "CN Resume Generator"
+  short_description: "生成国内求职策略、证据审计、简历、平台话术与面试准备包"
+  default_prompt: "Use $cn-resume-generator to plan a defensible China job-search strategy and create a resume package from my materials and target JD."
