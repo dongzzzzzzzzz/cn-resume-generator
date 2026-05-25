@@ -1,90 +1,90 @@
 ---
 name: cn-resume-generator
-description: Generate and improve Chinese domestic job-search resumes and application packages. Use when the user asks to 写简历, 改简历, 生成简历, 优化简历, 针对JD优化, 做BOSS/智联/猎聘/脉脉/拉勾简历, 准备校招/社招/实习/转行简历, 生成开聊话术, 评估候选人和岗位匹配度, 面试前准备, 或根据简历/JD预测面试问题. The skill is for China's hiring platforms and HR/hunter screening reality, not default overseas ATS score chasing.
+description: 生成并优化面向国内求职市场的简历与求职材料。当用户要求写简历、改简历、生成简历、优化简历、针对JD优化、做BOSS/智联/猎聘/脉脉/拉勾简历、准备校招/社招/实习/转行简历、生成开聊话术、评估候选人和岗位匹配度、面试前准备，或根据简历/JD预测面试问题时使用此技能。此技能专为国内招聘平台和HR/猎头的真实筛选逻辑设计，而非仅仅追求海外ATS系统的评分。
 ---
 
-# CN Resume Generator
+# 国内求职简历生成器 (CN Resume Generator)
 
-Create a domestic China job-search package: resume strategy, evidence audit, clean attachment resume, platform paste version, opening/referral scripts, JD-fit risk warning, interview-question forecast, and pre-interview study plan.
+创建适用于国内求职的完整材料包：简历策略、证据审计、干净的附件简历、平台粘贴版、开场/内推话术、JD适配风险提示、面试问题预测以及面试前补课清单。
 
-## Core Principle
+## 核心原则
 
 **最高原则：真实可防守。** 简历、平台话术、面试答案必须共享同一事实源。简历中的每个卖点都必须能在面试中防守；答不出来的内容不要写成强断言。
 
-Optimize for truthful employability, not cosmetic polish.
+针对真实的求职竞争力进行优化，而非仅仅为了排版美观。
 
-- Make the resume easier for HR, hiring managers, and hunters to understand in 30 seconds.
-- Match the target JD and platform context without inventing credentials, employers, projects, ownership, or metrics.
-- Surface weak fit clearly before the interview. A resume can frame evidence; it cannot fake ability.
-- Treat ATS as a compatibility check only for large-company, foreign-company, and campus-portal scenarios.
-- Use `[待确认]` only in a clearly named draft/checking version, never in the final application resume.
-- Do not load every reference upfront. Read the required reference at the step where it is needed.
-- Skill source files, references, sample data, and test descriptions must use fictional anonymized examples only. Never preserve real user names, contact details, company timelines, internal project names, or identifiable case details in the skill.
+- 确保简历能让HR、用人经理和猎头在30秒内快速看懂。
+- 匹配目标JD和平台语境，绝不捏造学历、雇主、项目、业务归属或业务指标。
+- 在面试前清晰暴露不匹配的风险点。简历只能对证据进行包装，无法伪造能力。
+- 仅在大厂、外企和校招网申场景下，将ATS系统解析作为兼容性检查标准。
+- 仅在明确命名的草稿/校对版本中使用 `[待确认]`，绝不要在最终投递的简历中保留此标记。
+- 不要预先加载所有参考文件。仅在需要的步骤加载相关的参考文件。
+- 技能源文件、参考资料、样本数据和测试描述必须仅使用虚构的脱敏示例。切勿在技能中保留真实用户名、联系方式、公司时间线、内部项目名称或可识别的案例细节。
 
-## Workflow
+## 工作流
 
-1. **Parse inputs**
-   - Classify candidate type: `社招`, `应届生`, `实习`, `转行`, or `高管/专家`.
-   - Classify platform: `BOSS`, `智联`, `猎聘`, `脉脉`, `拉勾`, `校招网申`, or `通用附件`.
-   - Classify task: `新建简历`, `旧简历改造`, `针对JD定制`, `面试准备`, or `公开脱敏案例`.
-   - If the user only says "帮我写简历" or similar, ask first for target role/JD, candidate type, old resume/raw experience, and desired output.
-   - If there is no old resume, raw experience, or concrete facts, enter `从零起步模式`: read `references/from-scratch-intake.md`, collect evidence first, and do not generate a resume or platform script yet.
-   - For PDF/image resumes, extract readable text first and verify timeline, employers, titles, projects, and contact details before auditing.
+1. **解析输入**
+   - 分类候选人类型：`社招`、`应届生`、`实习`、`转行` 或 `高管/专家`。
+   - 分类目标平台：`BOSS`、`智联`、`猎聘`、`脉脉`、`拉勾`、`校招网申` 或 `通用附件`。
+   - 分类任务类型：`新建简历`、`旧简历改造`、`针对JD定制`、`面试准备` 或 `公开脱敏案例`。
+   - 如果用户仅说“帮我写简历”或类似话语，先询问目标岗位/JD、候选人类型、旧简历/原始经历以及期望的输出。
+   - 如果没有旧简历、原始经历或具体事实，进入 `从零起步模式`：读取 `references/from-scratch-intake.md`，先收集证据，暂不生成简历或平台话术。
+   - 对于PDF/图片格式的简历，先提取可读文本，并在审计前验证时间线、雇主、职位、项目和联系方式。
 
-2. **Plan resume strategy**
-   - Read `references/resume-strategy.md`.
-   - Identify the target role's screening logic: hard gates, top 3 capabilities, differentiators, and likely rejection risks.
-   - Decide the candidate positioning: `强匹配`, `相近转化`, `保守投递`, or `不建议投递`.
-   - Draft the internal strategy before writing: main selling line, secondary selling points, content to weaken or omit, expected section structure, and delivery mode.
-   - If the material is messy, classify and rank it before asking. If it is hollow, ask for evidence instead of expanding labels.
-   - Do not generate a resume until this strategy decision exists.
+2. **规划简历策略**
+   - 读取 `references/resume-strategy.md`。
+   - 识别目标岗位的筛选逻辑：硬性门槛、Top 3能力项、差异化优势以及可能的淘汰风险点。
+   - 确定候选人定位：`强匹配`、`相近转化`、`保守投递` 或 `不建议投递`。
+   - 在开始写作前草拟内部策略：主卖点、次要卖点、需弱化或省略的内容、预期的模块结构以及投递方式。
+   - 如果素材杂乱，在提问前先进行分类和排序。如果内容空洞，要求提供具体证据，而不是扩充形容词。
+   - 在未确定此策略前，切勿生成简历。
 
-3. **Audit evidence, probe claims, and choose mode**
-   - Read `references/evidence-audit.md`.
-   - Keep evidence collection separate from evidence selection: record user facts first, then map them to the JD.
-   - Extract JD hard requirements and the top 3 role capabilities.
-   - Map candidate evidence to the JD and mark evidence level: strong, probeable, weak, missing, or risky; then mark match type: direct, indirect, or unrelated.
-   - Apply 3 hard gates: timeline/resume abnormality, missing JD hard requirement, and missing case for core role capability.
-   - Before broad follow-up, read `references/deep-probe.md` and the relevant role probe section.
-   - Before targeted follow-up, read `references/claim-led-probing.md`.
-   - Use two-layer probing: first understand the experience, then verify the specific claims needed for the chosen strategy.
-   - Ask up to 3 high-value questions per turn. Each question must say what claim or writing strength it verifies, such as ownership, metric basis, scope, depth, or personal boundary.
-   - Probe by resume/core-experience group, not by every possible claim. After at most 2 rounds, choose `正式投递版`, `保守投递版`, `草稿校对版`, `采集清单`, or `不建议投递包`.
-   - After each user answer, digest it before writing: what can be written, what must be conservative, what still needs confirmation, and what is forbidden.
-   - Record strategy, gate status, asked probes, answer digestion, unanswered items, final forbidden/downgrade list, and selected mode in `证据审计与补充问题.md`.
+3. **证据审计、主张深挖与模式选择**
+   - 读取 `references/evidence-audit.md`。
+   - 将证据收集与证据筛选分开：先记录用户事实，再将其映射到JD。
+   - 提取JD的硬性要求和Top 3岗位能力。
+   - 将候选人证据映射到JD，并标记证据级别：强劲、可深挖、微弱、缺失或高风险；然后标记匹配类型：直接、间接或无关。
+   - 应用3道硬性门槛：时间线/简历异常、缺失JD硬性要求、缺失核心岗位能力案例。
+   - 在广泛追问前，读取 `references/deep-probe.md` 和相关的岗位深挖部分。
+   - 在针对性追问前，读取 `references/claim-led-probing.md`。
+   - 采用双层深挖：先理解经历，再验证选定策略所需的具体主张。
+   - 每轮最多问3个高价值问题。每个问题必须说明其要验证的主张或写作亮点，例如业务归属、指标依据、范围、深度或个人边界。
+   - 按简历/核心经历组进行追问，而非针对每一个可能的主张。经过最多2轮追问后，选择 `正式投递版`、`保守投递版`、`草稿校对版`、`采集清单` 或 `不建议投递包`。
+   - 在每次用户回答后，在写作前先进行消化：哪些能写、哪些必须保守、哪些仍需确认、哪些被禁止。
+   - 将策略、门槛状态、已问问题、回答消化、未答事项、最终禁止/降级清单以及所选模式记录在 `证据审计与补充问题.md` 中。
 
-4. **Generate package**
-   - Do not create the output folder, write `resume-data.json`, render Markdown/DOCX, or write platform scripts until evidence audit is complete and either formal/conservative mode is allowed or `快速草稿模式` is selected.
-   - If only category labels are available, output `经历采集清单.md` or gap-closing advice; do not create a fill-in-the-blank resume.
-   - Before generating resume content, read `references/role-playbooks.md` and `references/common-resume-problems.md`.
-   - Before generating platform scripts, read `references/platform-playbooks.md`.
-   - Default to `深挖优先模式`: ask before writing when a hard gate fails.
-   - Use `快速草稿模式` only when real experience facts exist but limited details remain unresolved. Name outputs as draft/checking versions, downgrade uncertain claims, and mark missing facts as `[待确认]`.
-   - If fit is `不建议投递`, generate a risk-first package: state why fit is low, do not package the resume as high-fit, and provide safer wording, alternative targets, or gap-closing advice.
-   - Project bullets use a flexible `3+1` structure: background/goal, solution/key action, result/impact, and optionally real challenge/tradeoff/reusable method. Do not fill the optional bullet with empty language.
-   - Work experience states responsibility boundary and outcomes; project experience states method, architecture, process, or decisions. Avoid repeating the same metric or claim in both.
-   - Every core project must prove a specific capability. If you cannot explain what capability a project proves, downgrade, merge, or omit it.
-   - Final resume, online version, platform scripts, self-introduction, and interview answers must inherit the same strategy and evidence source. Do not make platform copy stronger than the attachment resume.
-   - Use role language from `references/role-playbooks.md` when needed.
-   - Apply `references/common-resume-problems.md` as the final resume QA checklist.
+4. **生成材料包**
+   - 在证据审计完成，且允许正式/保守模式，或选择了 `快速草稿模式` 之前，不要创建输出文件夹、编写 `resume-data.json`、渲染Markdown/DOCX或编写平台话术。
+   - 如果仅有类别标签，输出 `经历采集清单.md` 或差距弥补建议；不要创建填空式简历。
+   - 在生成简历内容前，读取 `references/role-playbooks.md` 和 `references/common-resume-problems.md`。
+   - 在生成平台话术前，读取 `references/platform-playbooks.md`。
+   - 默认采用 `深挖优先模式`：当硬性门槛未通过时，先提问再写作。
+   - 仅在有真实经历事实但有少量细节未确认时，使用 `快速草稿模式`。将输出文件命名为草稿/校对版，对不确定的主张进行降级处理，并将缺失事实标记为 `[待确认]`。
+   - 如果匹配度为 `不建议投递`，生成风险优先材料包：说明匹配度低的原因，不要将简历包装为高匹配度，并提供更保守的表述、替代目标岗位或差距弥补建议。
+   - 项目经历要点使用灵活的 `3+1` 结构：背景/目标、解决方案/关键动作、结果/影响，以及可选的真实挑战/权衡/可复用方法。不要用空洞的语言填充可选要点。
+   - 工作经历陈述职责边界和成果；项目经历陈述方法、架构、流程或决策。避免在两者中重复相同的指标或主张。
+   - 每一个核心项目都必须证明一种具体能力。如果无法解释一个项目证明了什么能力，对其进行降级、合并或省略。
+   - 最终简历、在线版本、平台话术、自我介绍和面试答案必须继承相同的策略和证据源。不要让平台文案比附件简历表现得更强。
+   - 需要时，使用 `references/role-playbooks.md` 中的岗位语言。
+   - 使用 `references/common-resume-problems.md` 作为最终简历QA清单。
 
-5. **Prepare defense, render, and QA**
-   - Read `references/risk-rubric.md` before producing `JD适配风险提示.md`.
-   - Predict interview questions only from the resume, JD, and confirmed user facts.
-   - If company/role-specific prep matters, search public sources such as 牛客, 脉脉, BOSS articles, 看准, 职朋, 应届生求职网, or user-provided links. Do not log in, bypass permissions, or scrape private content.
-   - Read `references/interview-question-playbooks.md`.
-   - Read `references/rendering-qa.md` before finalizing structured data and rendered files.
-   - Prefer a folder under the current workspace: `resume-output/<YYYYMMDD>-<岗位>/`.
-   - Build structured `resume-data.json`, then run `scripts/render_resume.py` to create Markdown and DOCX.
-   - Run `scripts/qa_check.py resume-data.json <rendered-md> --audit 证据审计与补充问题.md` before final delivery.
-   - If QA reports `fatal`, fix the resume or change it to a clearly named draft/checking version before delivery.
-   - If QA reports `warning`, handle it by rewriting, downgrading, omitting, or explaining why it remains.
-   - `修改说明.md` must describe only changes that are actually present in the final files.
-   - If PDF export tooling is available, export PDF; otherwise leave DOCX + Markdown.
+5. **面试准备、渲染与QA**
+   - 在生成 `JD适配风险提示.md` 之前，读取 `references/risk-rubric.md`。
+   - 仅根据简历、JD和已确认的用户事实预测面试问题。
+   - 如果公司/岗位特定的准备很重要，搜索公开来源，如牛客、脉脉、BOSS文章、看准、职朋、应届生求职网，或用户提供的链接。切勿登录、绕过权限或抓取私有内容。
+   - 读取 `references/interview-question-playbooks.md`。
+   - 在最终确定结构化数据和渲染文件前，读取 `references/rendering-qa.md`。
+   - 倾向于在当前工作区下创建一个文件夹：`resume-output/<YYYYMMDD>-<岗位>/`。
+   - 构建结构化的 `resume-data.json`，然后运行 `scripts/render_resume.py` 生成Markdown和DOCX文件。
+   - 在最终交付前，运行 `scripts/qa_check.py resume-data.json <rendered-md> --audit 证据审计与补充问题.md`。
+   - 如果QA报告 `fatal`，修复简历，或在交付前将其更改为明确命名的草稿/校对版。
+   - 如果QA报告 `warning`，通过重写、降级、省略或解释保留原因来处理。
+   - `修改说明.md` 必须仅描述最终文件中实际存在的更改。
+   - 如果有PDF导出工具，导出PDF；否则保留DOCX + Markdown。
 
-## Minimum Input Template
+## 最低输入模板
 
-When the user has not provided enough information, ask them to paste this:
+当用户提供的信息不足时，要求他们粘贴此模板并填写：
 
 ```text
 目标岗位/JD：
@@ -95,12 +95,12 @@ When the user has not provided enough information, ask them to paste this:
 希望输出：附件简历 / 平台粘贴版 / 面试准备 / 全部
 ```
 
-## Output Contract
+## 输出约定
 
-Default output folder:
+默认输出文件夹：
 
 ```text
-resume-output/<YYYYMMDD>-<target-role>/
+resume-output/<YYYYMMDD>-<目标岗位>/
 ├── <姓名>-<岗位>-附件简历.docx
 ├── <姓名>-<岗位>-附件简历.md
 ├── 在线简历粘贴版.md
@@ -114,23 +114,23 @@ resume-output/<YYYYMMDD>-<target-role>/
 └── resume-data.json
 ```
 
-Each final package must be immediately usable:
+每一个最终交付的材料包必须具备即用性：
 
-- Attachment resume: clean single-column Chinese resume suitable for upload.
-- Platform paste version: sectioned text for online-resume fields.
-- Platform scripts: BOSS opening message, 脉脉 referral request, 猎头摘要, or platform-specific equivalent.
-- Intake checklist: used when facts are not enough to write a defensible resume.
-- Evidence audit: evidence strength, allowed phrasing, missing facts, and claims that cannot be exaggerated.
-- Risk warning: fit level, interview exposure points, delivery risk, and preparation advice.
-- Interview forecast: questions tied to the user's actual resume projects and target JD.
-- Study plan: what to review in 1 day, 3 days, and longer-term.
+- 附件简历：干净的单列中文简历，适合上传。
+- 平台粘贴版：按模块划分的文本，适用于在线简历字段。
+- 平台话术：BOSS开场白、脉脉内推请求、猎头摘要或特定平台的对应话术。
+- 采集清单：当事实不足以撰写一份可防守的简历时使用。
+- 证据审计：证据强度、允许的表述、缺失的事实以及不能夸大的主张。
+- 风险提示：匹配度、面试暴露点、投递风险以及准备建议。
+- 面试预测：与用户的实际简历项目和目标JD相关联的问题。
+- 补课清单：1天内、3天内以及长期需要复习的内容。
 
-Keep `证据审计与补充问题.md` and `JD适配风险提示.md` distinct:
+保持 `证据审计与补充问题.md` 和 `JD适配风险提示.md` 的区别：
 
-- `证据审计与补充问题.md`: "证据真假强弱、能不能写、还要问什么。"
-- `JD适配风险提示.md`: "岗位匹配高低、面试会暴露什么、怎么准备。"
+- `证据审计与补充问题.md`："证据真假强弱、能不能写、还要问什么。"
+- `JD适配风险提示.md`："岗位匹配高低、面试会暴露什么、怎么准备。"
 
-`证据审计与补充问题.md` must include:
+`证据审计与补充问题.md` 必须包含：
 
 - `核心卖点假设`
 - `回答消化结论`
@@ -139,48 +139,48 @@ Keep `证据审计与补充问题.md` and `JD适配风险提示.md` distinct:
 - `仍需确认`
 - `终稿禁止/降级清单`
 
-## Candidate-Type Rules
+## 候选人类型规则
 
-- **社招**: emphasize business context, personal action, collaboration scope, tools/methods, and measurable results.
-- **应届生**: do not fabricate projects. Mine coursework, graduation project, competitions, clubs, internships, part-time work, self-built demos, and learning proof.
-- **实习**: emphasize availability, learning speed, coursework/practice relevance, and basic execution reliability.
-- **转行**: explain why the candidate is not starting from zero; translate prior experience into target-role evidence.
-- **高管/专家**: emphasize business scale, team scale, budget/revenue/cost ownership, strategic decisions, and industry credibility.
+- **社招**：强调业务背景、个人动作、协作范围、工具/方法以及可量化的结果。
+- **应届生**：切勿捏造项目。挖掘课程作业、毕业设计、竞赛、社团、实习、兼职、自建Demo以及学习证明。
+- **实习**：强调可实习时间、学习速度、课程/实践相关性以及基本的执行可靠性。
+- **转行**：解释为什么候选人不是从零开始；将过往经历转化为目标岗位的证据。
+- **高管/专家**：强调业务规模、团队规模、预算/营收/成本归属、战略决策以及行业公信力。
 
-For `应届生`, `实习`, `转行`, or hollow old resumes, use `references/from-scratch-intake.md` before drafting when concrete evidence is missing.
+对于 `应届生`、`实习`、`转行` 或空洞的旧简历，当缺失具体证据时，在起草前使用 `references/from-scratch-intake.md`。
 
-## Platform Rules
+## 平台规则
 
-- **BOSS**: optimize first-screen fit and direct opening message.
-- **智联**: optimize online field completeness, attachment resume, and campus/enterprise screening compatibility.
-- **猎聘**: optimize hunter-forwardable summary, seniority, stability, and compensation/level fit.
-- **脉脉**: optimize professional profile, personal brand, referral request, and target-company networking message.
-- **拉勾**: optimize internet-role keywords, project links, product/operation/tech stack, and growth metrics.
-- **校招网申**: optimize form fields, campus experiences, open-question material, and conservative ATS compatibility.
+- **BOSS**：优化首屏匹配度和直接的开场白。
+- **智联**：优化在线字段完整度、附件简历以及校招/企业筛选的兼容性。
+- **猎聘**：优化便于猎头转发的摘要、资历、稳定性以及薪酬/职级匹配度。
+- **脉脉**：优化职业主页、个人品牌、内推请求以及目标公司的人脉拓展话术。
+- **拉勾**：优化互联网岗位关键词、项目链接、产品/运营/技术栈以及增长指标。
+- **校招网申**：优化表单字段、校园经历、开放问题素材以及保守的ATS兼容性。
 
-## Privacy and Truthfulness
+## 隐私与真实性
 
-- In public-demo mode, anonymize names, schools, companies, phone, email, links, project names, and sensitive business data.
-- In real-application mode, preserve user-provided facts but remind the user to verify all contact details and claims.
-- In draft or audit files, mark uncertain metrics as `待确认`; in final resumes, omit or downgrade unconfirmed claims instead of converting them into facts.
-- Never claim `主导`, `负责核心`, `精通`, `独立完成`, or quantified impact unless the user evidence supports it.
-- Do not write real user cases into skill references, sample files, tests, or instructions. Use `候选人A`, `某公司`, `某项目`, and `demo@example.com` style placeholders.
-- Real user material may be used as local input for a run, but must not be preserved in the skill source.
+- 在公开演示模式下，对姓名、学校、公司、电话、邮箱、链接、项目名称和敏感业务数据进行脱敏处理。
+- 在真实投递模式下，保留用户提供的事实，但提醒用户核实所有联系方式和主张。
+- 在草稿或审计文件中，将不确定的指标标记为 `待确认`；在最终简历中，省略或降级未经确认的主张，而不是将其转化为事实。
+- 除非用户证据支持，否则绝不主张 `主导`、`负责核心`、`精通`、`独立完成` 或量化影响。
+- 不要将真实用户的案例写入技能参考文件、样本文件、测试或说明中。使用 `候选人A`、`某公司`、`某项目` 和 `demo@example.com` 风格的占位符。
+- 真实用户的材料可作为一次运行的本地输入，但绝不能保留在技能源文件中。
 
-## Script Usage
+## 脚本使用
 
-Create a `resume-data.json` with candidate and section data. `candidate.summary`, `candidate.gender`, `candidate.birth`, and `candidate.years_of_experience` are supported when the user provides them; never invent them.
+创建一个包含候选人和模块数据的 `resume-data.json` 文件。当用户提供 `candidate.summary`、`candidate.gender`、`candidate.birth` 和 `candidate.years_of_experience` 时，支持这些字段；绝不要凭空捏造。
 
-Render:
+执行渲染：
 
 ```bash
 python3 scripts/render_resume.py resume-data.json --output-dir resume-output/20260506-产品经理 --basename 候选人A-产品经理
 python3 scripts/qa_check.py resume-data.json resume-output/20260506-产品经理/候选人A-产品经理-附件简历.md --audit resume-output/20260506-产品经理/证据审计与补充问题.md
 ```
 
-The script renders:
+脚本将生成：
 
 - `<basename>-附件简历.md`
-- `<basename>-附件简历.docx` when `python-docx` is installed
+- 安装了 `python-docx` 时生成 `<basename>-附件简历.docx`
 
-If the script cannot create DOCX, still provide the Markdown resume and tell the user what dependency is missing.
+如果脚本无法创建DOCX，依然提供Markdown简历，并告知用户缺失了哪个依赖项。
